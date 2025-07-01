@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Documents</title>
+  <style>
+    /* Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f0f0;
+      color: #333;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    details.card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: box-shadow 0.2s ease;
+      width: 600px;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    details.card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    details.card summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 1.5rem;
+      background: #f9f9f9;
+    }
+    details.card summary::-webkit-details-marker { display: none; }
+    .summary-title {
+      color: #08428c;
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-decoration: underline;
+      cursor: pointer;
+      flex: 1;
+    }
+    .toggle-btn {
+      background: #08428c;
+      border: none;
+      color: #fff;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .toggle-btn:hover {
+      background: #062f66;
+      transform: translateY(-1px);
+    }
+    details.card[open] .toggle-btn {
+      transform: rotate(180deg);
+    }
+    .card-content {
+      padding: 0 1.5rem 1.5rem;
+      line-height: 1.5;
+      font-size: 0.95rem;
+      color: #555;
+      animation: fadeIn 0.3s ease;
+    }
+    .download-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 1.5rem;
+      padding: 1rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      background: #08428c;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .download-btn:hover {
+      background: #062f66;
+      transform: translateY(-2px);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 620px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      details.card { width: 100%; }
+      details.card summary { padding: 0.8rem 1rem; }
+      .summary-title { font-size: 1.1rem; }
+      .toggle-btn { font-size: 0.9rem; padding: 0.3rem 0.6rem; }
+      .card-content { padding: 0 1rem 1rem; font-size: 0.9rem; }
+      .download-btn { font-size: 1rem; padding: 0.9rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Available Files</h1>
+  <div class="grid" id="fileGrid"></div>
+
+  <script>
+    const files = [
+      {
+        title: 'VDO Fleet Services 2025 (BG)',
+        description: `Подробна оферта на български език за VDO Fleet Services през 2025 г., включваща:
+
+- Законно управление на данни от тахографи и карти на водача с надеждно архивиране
+- Дистанционно изтегляне и автоматизирани процеси за събиране на данни
+- Мониторинг на автопарка в реално време, докладване на нарушения и планиране на наличност на водачите
+- Контрол на финансовия риск (предотвратяване на глоби, гаранции)
+- Спазване на изискванията за трансгранична мобилност (Пакет мобилност I на ЕС)
+- Интуитивен уеб портал и мобилно приложение за управление в движение
+- Безпроблемна интеграция чрез VDO Fleet Connect/Extract към системи на трети страни`,
+        url: 'VDO_Fleet_2025_price_offer_BG.pdf'
+      },
+      {
+        title: 'API Reference',
+        description: 'Complete API documentation for v2.5, including endpoints, parameters, and example payloads.',
+        url: '/docs/api-reference.docx'
+      },
+      {
+        title: 'System Diagram',
+        description: 'Visual overview of system modules, data flow between services, and component interactions.',
+        url: '/docs/system-diagram.png'
+      }
+    ];
+
+    const grid = document.getElementById('fileGrid');
+    const detailsElements = [];
+
+    files.forEach(file => {
+      const details = document.createElement('details');
+      details.className = 'card';
+
+      const summary = document.createElement('summary');
+      summary.innerHTML = `
+        <a href="${file.url}" download class="summary-title">${file.title}</a>
+        <button class="toggle-btn">▼</button>
+      `;
+
+      const content = document.createElement('div');
+      content.className = 'card-content';
+      content.innerHTML = `
+        <p>${file.description.replace(/\n/g, '<br>')}</p>
+        <a href="${file.url}" download class="download-btn">Download</a>
+      `;
+
+      details.appendChild(summary);
+      details.appendChild(content);
+      grid.appendChild(details);
+      detailsElements.push(details);
+
+      // Toggle only this details
+      const toggleBtn = summary.querySelector('.toggle-btn');
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        details.open = !details.open;
+      });
+      details.addEventListener('toggle', () => {
+        if (details.open) {
+          detailsElements.forEach(d => { if (d !== details) d.open = false; });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

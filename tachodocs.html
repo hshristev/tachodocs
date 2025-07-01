@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TachoDocs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .tile-btn {
+      border: 2px solid #0e478a;
+      padding: 0.5rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+    .tile-btn:hover {
+      background: #0e478a;
+      color: white;
+    }
+    .tile-btn::before {
+      content: '\25B6';
+      margin-right: 0.5rem;
+      color: #22c55e;
+    }
+    .info-tile {
+      background-color: #f5f7fa;
+    }
+  </style>
+  <script>
+    function updateHeader(subtitle) {
+      document.getElementById('main-subtitle').textContent = subtitle;
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="bg-white py-6 shadow-md border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+      <div class="flex items-center gap-4">
+        <img src="logo.png" alt="TachoDocs Logo" class="h-12">
+        <div>
+          <h1 class="text-3xl font-bold tracking-wide">TachoDocs</h1>
+          <p id="main-subtitle" class="text-sm text-gray-500">Your digital support center</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-16 space-y-20">
+    <!-- Tile 1 -->
+    <section class="grid md:grid-cols-3 gap-6 items-center">
+      <div class="info-tile p-6 rounded-xl space-y-4">
+        <div class="space-y-2">
+          <div onclick="updateHeader('Tutorials and guides')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>DTCO 4.1a</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('Frequently asked questions')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>Други тахографи</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('Learn with VDO Academy')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>WorkshopTab2</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('Press resources and info')" class="flex justify-between items-center cursor-pointer">
+            <span>Новини</span>
+            <span>&rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <img src="bg2.png" alt="User Support Image" class="w-full rounded-xl shadow-md">
+        <div class="mt-4">
+          <a href="technical_docs/" class="tile-btn">Техническа документация</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tile 2 -->
+    <section class="grid md:grid-cols-3 gap-6 items-center">
+      <div class="info-tile p-6 rounded-xl space-y-4">
+        <div class="space-y-2">
+          <div onclick="updateHeader('Details about DTCO 4.1/4.1a')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>DTCO 4.1/4.1a</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('DTCO product overview')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>DTCO</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('Tools for downloading data')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>Download Tools</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('Apps and utilities')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>Apps</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('Miscellaneous documents')" class="flex justify-between items-center cursor-pointer">
+            <span>Miscellaneous</span>
+            <span>&rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <img src="img2.jpg" alt="FAQ Image" class="w-full rounded-xl shadow-md">
+        <div class="mt-4">
+          <a href="#faq" class="tile-btn">Техническа документация</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tile 3 -->
+    <section class="grid md:grid-cols-3 gap-6 items-center">
+      <div class="info-tile p-6 rounded-xl space-y-4">
+        <div class="space-y-2">
+          <div onclick="updateHeader('Fleet documentation and info')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>VDO Fleet</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('Tools for downloading data')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>Download Tools</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('Latest software versions')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>Software Updates</span>
+            <span>&rarr;</span>
+          </div>
+          <div onclick="updateHeader('All tachograph models')" class="flex justify-between items-center cursor-pointer">
+            <span>Tachographs</span>
+            <span>&rarr;</span>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <img src="img3.jpg" alt="Downloads Image" class="w-full rounded-xl shadow-md">
+        <div class="mt-4">
+          <a href="#downloads" class="tile-btn">Downloads</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-gray-500 text-sm py-10">
+    © 2025 TachoDocs. All rights reserved.
+  </footer>
+</body>
+</html>
