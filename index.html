@@ -1,25 +1,44 @@
 <script>
-  document.getElementById('doc-search').addEventListener('input', function(e) {
-    const term = e.target.value.trim().toLowerCase();
+  (function() {
+    const searchInput = document.getElementById('doc-search');
+    const mainContent = document.querySelector('main');
 
-    document.querySelectorAll('.doc-card').forEach(card => {
-      // Lowercase the keywords attribute for case-insensitive matching
-      const kws  = (card.getAttribute('data-keywords') || '').toLowerCase();
-      const text = card.textContent.toLowerCase();
+    // Create "no results" message if it doesn't exist
+    let noResults = document.getElementById('no-results');
+    if (!noResults) {
+      noResults = document.createElement('div');
+      noResults.id = 'no-results';
+      noResults.className = 'text-center text-red-700 bg-red-100 border border-red-300 px-6 py-4 rounded mb-8 hidden';
+      noResults.textContent = 'Няма намерени документи.';
+      mainContent.parentNode.insertBefore(noResults, mainContent);
+    }
 
-      card.style.display =
-        term === '' || kws.includes(term) || text.includes(term)
-          ? ''
-          : 'none';
+    searchInput.addEventListener('input', function(e) {
+      const term = e.target.value.trim().toLowerCase();
+      let anyCardVisible = false;
+
+      // Show/hide each card
+      document.querySelectorAll('.doc-card').forEach(card => {
+        const kws  = (card.getAttribute('data-keywords') || '').toLowerCase();
+        const text = card.textContent.toLowerCase();
+        const match = term === '' || kws.includes(term) || text.includes(term);
+        card.style.display = match ? '' : 'none';
+        if (match) anyCardVisible = true;
+      });
+
+      // Show/hide each section
+      document.querySelectorAll('main section').forEach(section => {
+        const cards = section.querySelectorAll('.doc-card');
+        const sectionHasVisible = Array.from(cards).some(c => c.style.display !== 'none');
+        section.style.display = sectionHasVisible ? '' : 'none';
+      });
+
+      // Toggle "no results" message
+      if (term !== '' && !anyCardVisible) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
     });
-
-    // Hide any section that has no visible cards
-    document.querySelectorAll('main section').forEach(section => {
-      const cards = section.querySelectorAll('.doc-card');
-      const anyVisible = Array.from(cards).some(
-        card => card.style.display !== 'none'
-      );
-      section.style.display = anyVisible ? '' : 'none';
-    });
-  });
+  })();
 </script>
