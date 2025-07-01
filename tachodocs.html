@@ -7,6 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+
+    
     body {
       font-family: 'Inter', sans-serif;
     }
@@ -52,7 +54,7 @@
     <!-- Tile 1 -->
     <section class="grid md:grid-cols-3 gap-6 items-center">
       <div>
-<h2 class="text-2xl font-semibold mb-4 pl-4">Информация</h2>
+<h2 class="text-2xl font-semibold mb-4 pl-4">Техници</h2>
 
       <div class="info-tile p-6 rounded-xl space-y-4">
         <div class="space-y-2">
@@ -86,36 +88,49 @@
     <!-- Tile 2 -->
     <section class="grid md:grid-cols-3 gap-6 items-center">
       <div>
-        <h2 class="text-2xl font-semibold mb-4 pl-4">Документация</h2>
+        <h2 class="text-2xl font-semibold mb-4 pl-4">Потребители</h2>
       <div class="info-tile p-6 rounded-xl space-y-4">
         <div class="space-y-2">
-          <div onclick="updateHeader('Details about DTCO 4.1/4.1a')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
-            <span>DTCO 4.1/4.1a</span>
+          <div onclick="updateHeader('Details about DTCO 4.1/4.1a/4.1b')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>DTCO 4.1/4.1a/4.1b</span>
             <span>&rarr;</span>
           </div>
           <div onclick="updateHeader('DTCO product overview')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
-            <span>DTCO</span>
+            <span>Други тахографи</span>
             <span>&rarr;</span>
           </div>
-          <div onclick="updateHeader('Tools for downloading data')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
-            <span>Download Tools</span>
+           <div onclick="updateHeader('Apps and utilities')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
+            <span>VDO Fleet</span>
             <span>&rarr;</span>
           </div>
-          <div onclick="updateHeader('Apps and utilities')" class="flex justify-between items-center border-b border-gray-300 pb-2 cursor-pointer">
-            <span>Apps</span>
-            <span>&rarr;</span>
-          </div>
-          <div onclick="updateHeader('Miscellaneous documents')" class="flex justify-between items-center cursor-pointer">
-            <span>Miscellaneous</span>
-            <span>&rarr;</span>
-          </div>
+          <!-- Fancy Dropdown Trigger -->
+<div class="relative group border-b border-gray-300 pb-2 cursor-pointer">
+  <div class="flex justify-between items-center">
+    <span class="font-medium text-gray-800 group-hover:text-blue-700 transition-colors duration-200">Download Tools</span>
+    <span class="transform group-hover:rotate-90 transition-transform duration-200">&rarr;</span>
+  </div>
+
+  <!-- Dropdown Menu -->
+  <div class="absolute left-0 mt-3 w-56 bg-white border border-gray-200 rounded-xl shadow-xl opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100 transition-all duration-300 z-10">
+    <div class="p-2 space-y-1">
+      <a href="#vdo-link" class="block px-4 py-2 rounded-lg text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-900 transition-colors duration-150">VDO Link</a>
+      <a href="#dl-4g" class="block px-4 py-2 rounded-lg text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-900 transition-colors duration-150">DL 4G</a>
+      <a href="#downloadkey-s" class="block px-4 py-2 rounded-lg text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-900 transition-colors duration-150">DOWNLOADKEY S</a>
+    </div>
+  </div>
+</div>
+
+
+         
+      
+          
         </div>
       </div>
       </div>
       <div class="md:col-span-2">
         <!-- <img src="img2.jpg" alt="FAQ Image" class="w-full rounded-xl shadow-md"> -->
         <div class="mt-4">
-          <a href="#faq" class="tile-btn">Техническа документация</a>
+          <a href="user_docs/index.html" class="tile-btn">Потребителска документация</a>
         </div>
       </div>
     </section>
