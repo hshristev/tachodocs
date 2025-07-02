@@ -17,26 +17,32 @@
   </style>
 </head>
 <body class="bg-white text-gray-800">
- <header class="bg-white py-6 shadow-md border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-    <div class="flex items-center gap-4">
-      <img src="../images/tachodocs_logo_2025.svg" alt="TachoDocs Logo" class="h-12">
-      <span class="text-xl font-semibold text-sky-900">Сервизна документация</span>
+<header class="bg-white py-6 shadow-md border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    
+    <!-- Logo and Title: stacked on mobile, side-by-side on desktop -->
+    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+      <img src="../images/tachodocs_logo_2025.svg" alt="TachoDocs Logo" class="h-12 w-auto mx-auto sm:mx-0">
+      <span class="text-center sm:text-left text-xl sm:text-2xl font-semibold text-sky-900">
+        Сервизна документация
+      </span>
     </div>
+
     <!-- Go Back Button -->
     <button
       type="button"
       onclick="history.back()"
-    class="inline-flex items-center px-4 py-2 bg-[#08428c] text-white text-sm font-medium rounded-lg shadow hover:bg-[#073575] focus:outline-none focus:ring-2 focus:ring-[#08428c]"
+      class="inline-flex items-center px-4 py-2 bg-[#08428c] text-white text-sm font-medium rounded-lg shadow hover:bg-[#073575] focus:outline-none focus:ring-2 focus:ring-[#08428c]"
     >
       <!-- Heroicon: Arrow Left -->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-    </svg>
-    Назад
-  </button>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      Назад
+    </button>
   </div>
 </header>
+
 
 
 <div class="max-w-7xl mx-auto px-6 py-4">
@@ -56,9 +62,17 @@
       <div class="grid md:grid-cols-3 gap-6">
         
           <div class="bg-white rounded-xl shadow p-5 doc-card flex flex-col space-y-2" data-keywords="SI 166444,DTCO 4.1,DTCO 4.1a,DTCO 4.1b, dtco41, събитие 96, event 96, GNSS, намеса, интерференция, заглушаване, смущения, спуфинг, spoofing, OSNMA, PDF">
-        <p class="text-sm font-semibold text-sky-600 uppercase">SI 166444</p>
         <h3 class="text-lg font-semibold">Събитие 96 – Намеса в GNSS</h3>
-        <p class="text-sm text-gray-600">PDF файл, 2025</p>
+        <div class="flex justify-between items-center">
+         <!-- Meta info -->
+        <p class="text-sm text-gray-600">
+         PDF файл, 2025
+        </p>
+         <!-- SI badge -->
+        <span class="inline-block bg-gray-100 text-sky-600 text-xs font-semibold uppercase px-2 py-1 rounded-full tracking-wide">
+         SI 166444
+        </span>
+        </div>
         
       <div class="mt-3 flex gap-3">
       <a href="docs/116444_V03_BG_DTCO_Event_96_GNSS_BG.pdf" target="_blank" class="flex-1 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 text-center">Преглед</a>
@@ -68,7 +82,7 @@
 
 
       <div class="bg-white rounded-xl shadow p-5 doc-card flex flex-col space-y-2" data-keywords="DTCO 4.1, резюме, съобщения, грешки, събития, VDO, BG, PDF, 2025">
-        <p class="invisible h-5"></p>
+
         <h3 class="text-lg font-semibold">Резюме на грешки</h3>
         <p class="text-sm text-gray-600">PDF файл, 2025</p>
         
@@ -78,14 +92,8 @@
       </div>
       </div>
 
-
-
-        <div class="bg-white rounded-xl shadow p-5 doc-card"  data-keywords="DTCO 4.1, резюме, съобщения, грешки, събития, VDO, BG, PDF, 2025">
-          <h3 class="text-lg font-semibold">Резюме на грешки</h3>
-          <p class="text-sm text-gray-600">PDF файл, 2025</p>
-          <a href="docs/VDO-DTCO_Message_summaries_BG_4.1-6.pdf" target="_blank" class="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">Преглед</a>
-          <a href="docs/VDO-DTCO_Message_summaries_BG_4.1-6.pdf" download class="mt-3 inline-block bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">Изтегли</a>
-        </div>
+      
+      
 
         <div class="bg-white rounded-xl shadow p-5 doc-card flex flex-col space-y-2" data-keywords="si 116461, dtco 4.1a, преходен, transitional, final, финален, вариант, workshoptab, сервизна информация, vdo, pdf, bg">
         <h3 class="text-lg font-semibold">DTCO 4.1a – Transitional &amp; Final</h3>
@@ -99,7 +107,6 @@
          SI 116461
         </span>
         </div>
-        
       <div class="mt-3 flex gap-3">
       <a href="docs/SI116461_DTCO 4.1 Transitional_Final_BG_V04-1.pdf" target="_blank" class="flex-1 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 text-center">Преглед</a>
       <a href="docs/SI116461_DTCO 4.1 Transitional_Final_BG_V04-1.pdf" download class="flex-1 bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-700 text-center"> Изтегли </a>
@@ -107,14 +114,28 @@
       </div>
 
 
-        <div class="bg-white rounded-xl shadow p-5 doc-card"  data-keywords="SI 116465, DTCO 4.1a, OSNMA, Galileo, GNSS, удостоверяване, съотношение сигнал-шум, VDO, BG, PDF">
-            <!-- Service Info Number -->
-          <p class="text-xs text-gray-500 mb-1">Service Info: <strong>116465</strong></p>
-          <h3 class="text-lg font-semibold">DTCO 4.1a – Услуга OSNMA</h3>
-          <p class="text-sm text-gray-600">PDF файл, 2025</p>
-          <a href="docs/SI 116465_OSNMA_BG-1.pdf" target="_blank" class="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">Преглед</a>
-          <a href="docs/SI 116465_OSNMA_BG-1.pdf" download class="mt-3 inline-block bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">Изтегли</a>
+
+
+      <div class="bg-white rounded-xl shadow p-5 doc-card flex flex-col space-y-2" data-keywords="SI 116465, DTCO 4.1a, OSNMA, Galileo, GNSS, удостоверяване, съотношение сигнал-шум, VDO, BG, PDF">
+        <h3 class="text-lg font-semibold">DTCO 4.1a – Услуга OSNMA</h3>
+        <div class="flex justify-between items-center">
+         <!-- Meta info -->
+        <p class="text-sm text-gray-600">
+         PDF файл, 2025
+        </p>
+         <!-- SI badge -->
+        <span class="inline-block bg-gray-100 text-sky-600 text-xs font-semibold uppercase px-2 py-1 rounded-full tracking-wide">
+         SI 116465
+        </span>
         </div>
+      <div class="mt-3 flex gap-3">
+      <a href="docs/SI 116465_OSNMA_BG-1.pdf" target="_blank" class="flex-1 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 text-center">Преглед</a>
+      <a href="docs/SI 116465_OSNMA_BG-1.pdf" download class="flex-1 bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-700 text-center"> Изтегли </a>
+      </div>
+      </div>
+
+
+        
 
        
       </div>
@@ -126,21 +147,45 @@
       <h2 class="text-3xl font-semibold text-sky-800 mb-6">Монтаж и настройка</h2>
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Example Card -->
-        <div class="bg-white rounded-xl shadow p-5 doc-card" data-keywords="volvo, renault, chano, параметър, pdf, 2024, рено, волво, шано DTCO 4.1, монтаж">
-          <h3 class="text-lg font-semibold">Volvo/Renault – CHANO Параметър</h3>
-          <p class="text-sm text-gray-600">PDF файл, версия 2024</p>
-          <a href="docs/Volvo_Renault Chano Parameter - BG.pdf" target="_blank" class="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">Преглед</a>
-          <a href="docs/Volvo_Renault Chano Parameter - BG.pdf" download class="mt-3 inline-block bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">Изтегли</a>
-        </div>
 
-       <div class="bg-white rounded-xl shadow p-5 doc-card" data-keywords="scania, stoneridge, замяна, dtco, pdf, 2024, скания, 4.1, монтаж ">
-  <h3 class="text-lg font-semibold">Scaniа – Замяна на Stoneridge с DTCO 4.1</h3>
-  <p class="text-sm text-gray-600">PDF файл, версия 2024</p>
-  <div class="flex flex-wrap gap-3 mt-3">
-    <a href="docs/BG_Замяна_Stoneridge-_DTCO4-1_Scania-1.pdf" target="_blank" class="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300">Преглед</a>
-    <a href="docs/BG_Замяна_Stoneridge-_DTCO4-1_Scania-1.pdf" download class="inline-block bg-sky-600 text-white px-4 py-2 rounded hover:bg-sky-700">Изтегли</a>
-  </div>
-</div>   
+            <div class="bg-white rounded-xl shadow p-5 doc-card flex flex-col space-y-2" data-keywords="volvo, renault, chano, параметър, pdf, 2024, рено, волво, шано, DTCO 4.1, монтаж">
+        <h3 class="text-lg font-semibold">Volvo/Renault – CHANO Параметър</h3>
+        <div class="flex justify-between items-center">
+         <!-- Meta info -->
+        <p class="text-sm text-gray-600">
+         PDF файл, 2024
+        </p>
+         <!-- SI badge -->
+        
+        </div>
+      <div class="mt-3 flex gap-3">
+      <a href="docs/Volvo_Renault Chano Parameter - BG.pdf" target="_blank" class="flex-1 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 text-center">Преглед</a>
+      <a href="docs/Volvo_Renault Chano Parameter - BG.pdf" download class="flex-1 bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-700 text-center"> Изтегли </a>
+      </div>
+      </div>
+
+
+      <div class="bg-white rounded-xl shadow p-5 doc-card flex flex-col space-y-2" data-keywords="scania, stoneridge, замяна, dtco, pdf, 2024, скания, 4.1, монтаж ">
+        <h3 class="text-lg font-semibold">Scaniа – Замяна на Stoneridge с DTCO 4.1</h3>
+        <div class="flex justify-between items-center">
+         <!-- Meta info -->
+        <p class="text-sm text-gray-600">
+         PDF файл, 2024
+        </p>
+         <!-- SI badge -->
+        <span class="inline-block bg-gray-100 text-sky-600 text-xs font-semibold uppercase px-2 py-1 rounded-full tracking-wide">
+         SI 116410
+        </span>
+        </div>
+      <div class="mt-3 flex gap-3">
+      <a href="docs/BG_Замяна_Stoneridge-_DTCO4-1_Scania-1.pdf" target="_blank" class="flex-1 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 text-center">Преглед</a>
+      <a href="docs/BG_Замяна_Stoneridge-_DTCO4-1_Scania-1.pdf" download class="flex-1 bg-sky-600 text-white px-4 py-2 rounded-lg hover:bg-sky-700 text-center"> Изтегли </a>
+      </div>
+      </div>
+
+        
+
+  
       </div>
     </section>
 
